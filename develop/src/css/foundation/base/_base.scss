@@ -1,0 +1,338 @@
+@use '../setting/index' as *;
+@use '../variable' as *;
+@use 'sass:math';
+
+:root {
+  --vw: 100vw;
+  --vh: 100vh;
+}
+
+body {
+  // background-color: blue;
+}
+#chanel-2403 {
+  .fv {
+    position: relative;
+    @include media(sp) {
+      width: 100%;
+      height: 100vh;
+      // height: calc(var(--adressBar, 1vh) * 100);
+      // height: 100svh;
+    }
+    @include media(pc) {
+      width: 100%;
+      height: 100vh;
+    }
+    .fv_top {
+      z-index: 2;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @include media(sp) {
+        width: 100%;
+        height: 100svh;
+      }
+      @include media(pc) {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+    }
+    .fv_topArea {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      transition: opacity 0.6s;
+    }
+    .fv_topSpin {
+      border-radius: 100%;
+      will-change: transform;
+      height: 36px;
+      width: 36px;
+    }
+
+    // bottom
+    .fv_bottom {
+      position: absolute;
+      z-index: 3;
+      @include media(sp) {
+        width: 100%;
+        height: 100vh;
+        // overflow: hidden;
+      }
+      @include media(pc) {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+    }
+    .fv_bottomBlock {
+      @include media(sp) {
+        display: flex;
+        flex-direction: column;
+      }
+      @include media(pc) {
+        display: flex;
+      }
+    }
+    .fv_bottomVideoArea {
+      pointer-events: none;
+      @include media(sp) {
+        width: 100%;
+        height: sp(382);
+        overflow: hidden;
+      }
+      @include media(pc) {
+        width: 100%;
+        height: 100vh;
+      }
+      .video-js .vjs-control-bar {
+        display: none;
+      }
+      .video {
+        border-width: 0;
+        object-fit: cover;
+        filter: drop-shadow(0px 0px rgba(0, 0, 0, 0));
+        outline: none;
+        border: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        .vjs-tech {
+          object-fit: cover;
+        }
+      }
+    }
+    .fv_bottomImageArea {
+      @include media(sp) {
+        width: 100%;
+        height: calc(100vh - sp(382));
+      }
+      @include media(pc) {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .fv_bottomImage {
+      display: block;
+      @include media(sp) {
+        width: 100%;
+        height: calc(100vh - sp(382));
+        height: calc(100svh - sp(382));
+        > .i {
+          object-position: top;
+        }
+      }
+      @include media(pc) {
+        // width: 100%;
+        // height: 100%;
+        // scale: 0.5;
+        width: pc(386);
+        height: pc(484);
+      }
+      > .i {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .fv_bottomBgArea {
+      @include media(sp) {
+        width: 100%;
+        height: 100svh;
+        // height: calc(var(--adressBar, 1vh) * 100);
+        background-color: transparent;
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        // top: 100vh;
+        // top: calc(var(--adressBar, 1vh) * 100);
+        top: 100svh;
+        left: 0;
+      }
+      @include media(pc) {
+        width: 50%;
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 100vh;
+        left: 0;
+      }
+    }
+    .fv_bottomBgAreaInner {
+      @include media(sp) {
+        margin-bottom: sp(60);
+        height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+      @include media(pc) {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    .fv_bottomBgTitle {
+      @include media(sp) {
+      }
+      @include media(pc) {
+      }
+    }
+    .fv_bottomBgTitleSml {
+      display: flex;
+      @include media(sp) {
+        width: sp(490);
+        height: sp(23);
+      }
+      @include media(pc) {
+        width: pc(406);
+        height: pc(19);
+        margin-right: auto;
+        margin-left: auto;
+      }
+      > .i {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .fv_bottomBgTitleLar {
+      display: flex;
+      @include media(sp) {
+        width: sp(484);
+        height: sp(50);
+        margin-top: sp(30);
+      }
+      @include media(pc) {
+        width: pc(402);
+        height: pc(42);
+        margin-top: pc(21);
+        margin-right: auto;
+        margin-left: auto;
+      }
+      > svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+    }
+    .fv_bottomBgTextArea {
+      margin-right: auto;
+      margin-left: auto;
+      @include media(sp) {
+        width: sp(670);
+      }
+      @include media(pc) {
+        width: pc(429);
+      }
+    }
+    .fv_bottomBgSubTitle {
+      @include media(sp) {
+        font-size: sp(30);
+        line-height: math.div(48, 30);
+        letter-spacing: -0.05em;
+        margin-top: sp(57);
+      }
+      @include media(pc) {
+        font-size: pc(18);
+        line-height: math.div(28, 18);
+        margin-top: pc(37);
+        white-space: nowrap;
+      }
+    }
+    .fv_bottomBgText {
+      @include media(sp) {
+        margin-top: sp(39);
+      }
+      @include media(pc) {
+        margin-top: pc(20);
+      }
+    }
+    .fv_bottomBgTextCredit {
+      @include media(sp) {
+        margin-top: sp(46);
+      }
+      @include media(pc) {
+        width: pc(429);
+        margin-top: pc(28);
+      }
+    }
+    .fv_bottomTextArea {
+      @include media(sp) {
+        position: absolute;
+        left: sp(52);
+        bottom: calc(100svh + sp(70));
+        display: flex;
+        flex-direction: column;
+      }
+      @include media(pc) {
+        position: absolute;
+        left: pc(30);
+        bottom: calc(100vh + pc(35));
+      }
+    }
+    .fv_bottomBeginText {
+      @include media(sp) {
+        order: 2;
+        text-align: center;
+        margin-top: sp(47);
+      }
+      @include media(pc) {
+        font-size: pc(20);
+        line-height: math.div(28, 20);
+      }
+    }
+    .fv_bottomEndText {
+      svg {
+        display: block;
+        overflow: visible;
+        @include media(sp) {
+          width: sp(649);
+          height: sp(193);
+        }
+        @include media(pc) {
+          width: pc(1219);
+          height: auto;
+          margin-top: pc(14);
+        }
+      }
+    }
+  }
+}
+
+.pc-only {
+  @include media(sp) {
+    display: none !important;
+    line-height: math.div(10, 10);
+  }
+  @include media(pc) {
+    display: block;
+  }
+}
+
+.sp-only {
+  @include media(sp) {
+    display: block;
+  }
+  @include media(pc) {
+    display: none !important;
+  }
+}
