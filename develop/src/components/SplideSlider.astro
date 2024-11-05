@@ -1,0 +1,19 @@
+---
+import '@splidejs/splide/css';
+
+const { slides } = Astro.props;
+---
+
+
+<div class="splide" aria-label="Splide Basic HTML Example">
+  <div class="splide__track">
+    <div class="splide__list">
+      {slides.map(slide => (
+        <div class="splide__slide">
+          <img src={slide.src} alt={slide.alt}/>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+

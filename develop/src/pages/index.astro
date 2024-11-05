@@ -1,22 +1,26 @@
 ---
 import Header from '../components/Header.astro';
+import SplideSlider from '../components/SplideSlider.astro';
 import '../../src/css/index.scss';
-
 const imagePath = "/assets/images/";
+
+const slides = [
+	{src: `${imagePath}img_01.jpg`,alt: "slide01"},
+	{src: `${imagePath}img_02.jpg`,alt: "slide02"},
+];
 ---
 
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href={`${imagePath}favicon.svg`} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
-		<script src="../../src/js/index.js"></script>
+		<script src="../js/index.js"></script>
 	</head>
 	<body>
 		<Header imagePath={imagePath}/>
-		<img src={`${imagePath}favicon.svg`} alt="">
-		<h1>私のAstroサイト</h1>
+		<SplideSlider slides={slides}/>
 	</body>
 </html>

@@ -1,3 +1,29 @@
-@use "../foundation/setting/index" as *;
-@use "../foundation/variable/index" as *;
-@use "sass:math";
+@use '../foundation/setting/index' as *;
+@use '../foundation/variable/index' as *;
+@use 'sass:math';
+
+.l-header {
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  // position: fixed;
+  // left: 0;
+  // right: 0;
+  a {
+    display: block;
+    mix-blend-mode: difference;
+    img {
+      width: 60px;
+      height: auto;
+    }
+  }
+  nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
