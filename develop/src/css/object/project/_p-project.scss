@@ -1,4 +1,22 @@
-@use "../../foundation/setting/index" as *;
-@use "../../foundation/variable/index" as *;
-@use "sass:math";
+@use '../../foundation/setting/index' as *;
+@use '../../foundation/variable/index' as *;
+@use 'sass:math';
 
+.splide {
+  width: pc(500);
+  height: pc(500);
+  margin: auto;
+  .splide__track {
+    .splide__list {
+      .splide__slide {
+        width: pc(500);
+        height: pc(500);
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
