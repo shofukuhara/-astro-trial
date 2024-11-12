@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
 import relativeLinks from 'astro-relative-links';
+import path from 'path';
 
 export default defineConfig({
   server: {

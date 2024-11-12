@@ -1,7 +1,19 @@
-@use '../foundation/setting/index' as *;
-@use '../foundation/variable/index' as *;
-@use 'sass:math';
+---
+import '../../../src/css/index.scss';
+const { imagePath } = Astro.props;
+---
 
+<header class="l-header">
+  <a href="/"><img src={`${imagePath}favicon.svg`} alt="Favicon" /></a>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
 .l-header {
   display: flex;
   width: 1000px;
@@ -27,3 +39,5 @@
     }
   }
 }
+</style>
+

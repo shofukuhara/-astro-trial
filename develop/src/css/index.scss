@@ -1,19 +1,13 @@
 @charset "UTF-8";
 
 // ================
-// Foundation
+// global
 // ================
 
-@use "./foundation/foundation";
+@use './global/index.scss' as global;
 
 // ================
-// layout
+// setting
 // ================
 
-@use "./layout/layout";
-
-// ================
-// object
-// ================
-
-@use "./object/object";
+@use './setting/index.scss' as setting;
